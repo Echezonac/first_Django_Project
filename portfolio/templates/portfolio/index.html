@@ -1,0 +1,230 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+{% load static %}
+<style>
+  *{
+  box-sizing: border-box;
+}
+.service_Box h1{
+  font-family: arial;
+  font-size: 1.5em;
+  margin: 20px auto;
+}
+p{
+  font-family: arial;
+  font-size: small;
+  line-height: 20px;
+
+}
+
+  .carousel- .carousel-item img{
+    height: 100vh;
+    min-height: 500px;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 550px;
+    max-height: 550px;
+    width: auto;
+}
+
+.carousel-item .carousel-caption{
+   bottom:50px;
+   color:#666868;
+   width: 400px;
+   background-color: rgba(0,0,0,0.5);
+   margin: 10px auto;
+    
+} 
+
+.carousel-item .carousel-caption h2::first-letter{
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 65px;
+    font-weight: 800;
+    letter-spacing: 3px;
+ } 
+ .carousel-item .carousel-caption h2{
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;  
+ }
+ .service_row{
+   margin: 100px auto;
+ }
+ .service_Box{
+   padding: 10px;
+   width: 250px;
+   min-width: 200px;
+   height: 500px;
+   margin: 10px auto;
+   box-shadow:7px 7px 5px 7px rgba(183, 183, 183, 0.75);
+   transition: 0.5s;
+ }
+ .service_Box:hover{
+  transform: translateY(50px);
+
+ }
+
+.overlayy {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #173142;
+}
+
+
+
+
+#galpic:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+  /*===========================================Gallery============================================ */
+
+#slide{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* .slide01{
+  display: none !important;
+} */
+
+#slide p{
+  color: #173142;
+  font-size: 30px;
+}
+
+#slide img {
+    width: 100px;
+    height: 100px;
+}
+
+</style>
+
+     <!-- main -->
+  
+     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner">
+        {% for carousel in carousels|slice:":3" %}
+        {% if forloop.first %}
+        <div class="carousel-item active">
+        {% else %}
+        <div class="carousel-item">
+        {% endif %}
+          <img src="{{ carousel.image.url }}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="text-light">{{ carousel.heading }}</h5>
+            <p class="text-light">{{ carousel.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+   
+      <!-- main_End -->
+      <a id="services"></a>
+      <div class="container-fluid">
+        <div class="mt-5 mx-auto pt-5" style="width: fit-content;">
+          <a id="services"></a>
+          <h1 class="text-center px-2" style="font-size: 50px;border-left: 5px solid red;">Services</h1>
+        </div>
+        <div class="row service_row">
+          
+          <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="service_Box">
+              <img src="{% static 'pics/arc_Bg1.png' %}" alt="arch" class="img-fluid">
+              <h1 class="text-center">Architecture Design</h1>
+              <p class="text-justify ye"> Structure Design, Landscape Design, Interrior Design, Renovation, Construction and Supervision
+              </p>
+              <button type="button" class="btn btn-outline-primary d-block mx-auto" ><a href="{% url 'contactpage' %}">
+                Explore &rarr;
+              </a></button>
+              
+             </div>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="service_Box">
+              <img src="{% static 'pics/web.png' %}" alt="arch" class="img-fluid d-block mx-auto">
+              <h1 class="text-center">Software Dev.</h1>
+              <p class="text-justify">Software development, Andriod/ios App development, Database management, Website programming.
+              </p>
+              <button type="button" class="btn btn-outline-primary d-block mx-auto" ><a href="{% url 'contactpage' %}">
+                Explore &rarr;
+              </a></button>
+             </div>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="service_Box">
+              <img src="{% static 'pics/bis.png' %}" alt="arch" class="img-fluid d-block mx-auto">
+              <h1 class="text-center mt-5">Strategist</h1>
+              <p class="text-justify">Business strategist, Marketing Consultant, Start-Up analysis, Business Branding, business planning.
+              </p>
+              <button type="button" class="btn btn-outline-primary d-block mx-auto" ><a href="{% url 'contactpage' %}">
+                Explore &rarr;
+              </a></button>
+             </div>
+          </div>
+        </div>
+      </div>
+<!-- services -->
+<!-- gallery -->
+<div class="row">
+ <div class="col-12">
+    <h1 class="text-center px-2" style="font-size: 50px;border-left: 5px solid red; width: fit-content; margin: 60px auto;">Gallery</h1>
+ </div>
+</div>
+
+<div class="row d-flex justify-content-evenly align-items-center flex-wrap-wrap">
+
+{% for pic in pictures %}
+<div class="galleryBox" style="width: 30%; height: 380px; padding: 10px;">
+  <img src="{{ pic.image.url }}" alt="gallerypic" id="galpic" class="img-fluid d-block mx-auto">
+  <p class="card-title">{{ pic.location }}</p>
+</div>
+{% endfor %}
+
+</div>
+
+<!-- gallery_End -->
+
+
+{% endblock %}

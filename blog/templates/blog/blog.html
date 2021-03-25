@@ -1,0 +1,47 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid">
+
+  <!-- top -->
+  <div class="row">
+    <div class="col-12">
+        <h1 class="p-4 text-center">hilZ Gossip</h1>
+    </div>
+</div>
+
+<div class="row">
+
+  <div class="col-12">
+  <!-- card1 -->
+  {% for blog in blogs %}
+
+  <div class="card p-3 staff_box my-3" style="width: auto;">
+    <div class="row g-0">
+      <div class="col-md-4 my-auto">
+        <img src="{{blog.image.url}}" alt="KID TOOTHBRUSH" class="img-fluid d-block mx-auto">
+      </div>
+      <div class="col-md-8 my-auto">
+        <div class="card-body">
+          <h5 class="card-title" style="font-size: large;">{{blog.title}}</h5>
+          <p class="card-text text-justify blogword">{{blog.description}}</p>
+          <button class="btn blogbtn btn-outline-primary d-block mx-auto my-4">Read Article</button>
+          <p>{{blog.date}}</p>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  {% endfor %}
+<!-- cardend -->
+  
+  </div>
+
+  
+
+  </div>
+
+
+
+</div>
+{% endblock %}

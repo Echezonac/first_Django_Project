@@ -1,0 +1,259 @@
+ /* /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+p{
+    text-align: center;
+}
+
+/*========================================================== Personal code ==================================================*/
+*{
+	font-family: 'Zilla Slab', serif;
+	user-select: none;
+	text-decoration: none;
+	list-style: none;
+    color:#173142 !important;
+}
+h1{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Akaya Telivigala', cursive;
+}
+p{
+    font-family: 'Akaya Telivigala', cursive;
+}
+a{
+    font-family: 'Akaya Telivigala', cursive;
+    font-family: 'Oswald', sans-serif;
+}
+/*============================================================= nav_BAr=================================================== */
+
+
+.navbar{
+    background-color:black !important;
+	color:#173142;
+	height:50px;
+}
+
+.header{
+	position: sticky;
+	top: 0;
+	z-index: 1500;
+}
+
+.menu_List .fa-times{
+	color: #ffca0a;
+	float: right;
+	font-size: 20px;
+	font-weight: 20px;	
+}
+.menu_List .fa-times:hover{
+	border: 2px solid #ffca0a;
+}
+
+.menu_List .List{
+	padding: 20px 5px;
+	
+}
+
+.menu_List .List a:hover{
+	border-left: 2px solid #ffca0a;
+	padding: 10px;
+	color: #54cae8;
+}
+
+.menu_List .List a{
+	color:#ffca0a;
+	font-size: 20px;
+	font-family: 'Zilla Slab', serif;
+	text-decoration: none;
+}
+
+.menu_List a i{
+	color:#ffca0a;
+	padding: 0 10px;
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+
+.menu_List a i:hover{
+	border-bottom: 2px solid #ffca0a;
+	color: #54cae8;
+	padding-bottom: 10px;
+}
+
+.menu_List #btn_List{
+	background-color:#ffca0a;
+	padding:5px 50px;
+	margin: auto;
+	display: block;
+	border-radius: 20px;
+}
+
+.menu_List #btn_List .btn{
+	color: #173142;
+	font-family: 'Big Shoulders Stencil Text', cursive;
+	text-decoration: none;
+}
+
+.menu_List #btn_List:hover{
+	background-color:#54cae8;
+	
+}
+
+.menu_List #btn_List .btn:hover{
+	color:#173142;
+	
+}
+
+/* =============================================================main================================================= */
+.main_Bar{
+	/* background-image: url(pics/bodybg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center; */
+	background-image: linear-gradient(to top right,#173142,white);
+	width: auto;
+	height: fit-content;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.main_Bar .intro h1,p,h5{
+	color:#173142;
+	text-align: center;
+	font-family: 'Big Shoulders Stencil Text', cursive;
+	padding:5px  30px;
+	font-weight: bold;
+}
+
+.btn_Link{
+	background-color:#ffca0a;
+	padding:5px 50px;
+	margin:auto;
+	display: block;
+	border-radius: 20px;
+}
+.btn_Link:hover{
+	background-color:#54cae8;
+	text-decoration: none;
+	
+}
+
+.btn_Link a{
+	color: #173142;
+	font-family: 'Big Shoulders Stencil Text', cursive;
+	text-decoration: none;
+}
+@media screen and (max-width: 576px) {
+	.img_Profie .img-fluid{
+	  display: none;
+	}
+  }
+  /* =================================================================other============================================= */
+  .small_colume{
+	  background-color: white;
+	  height: fit-content;
+	  /* background-image: linear-gradient(to bottom right,#173142,white); */
+
+  }
+
+  .small_colume h1{
+	color: #173142;
+	text-align: center;
+	font-size: 50px;
+	font-family: 'Girassol', cursive;
+	text-shadow: 2px 2px 10px#ffca0a;
+	
+}
+
+.small_colume span{
+	color: #54cae8;
+	font-size: 100px;
+}
+
+.small_colume .b:hover{
+	box-shadow: 10px 10px 20px 10px gray;
+	transform: translateY(50px);
+}
+
+.small_colume .b{
+	transition: 0.5s;
+	
+}
+
+.small_colume p{
+	color: #173142;
+}
+.rating i{
+	
+	color: #173142;
+}
+
+/* =========================================================footer================================================ */
+.footer{
+	background-color: #173142;
+}
+
+.footer h1,.footer p{
+	color: #ffca0a;
+	padding-top: 20px;
+	text-align: center;
+}
+.footer .icon{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.footer .icon a i{
+	color: #ffca0a;
+	padding: 20px;
+	font-size: 20px;
+}

@@ -1,0 +1,88 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+<style>
+  .xc{
+    border-style: none;
+    outline-style: none;
+    background: none;
+    color: #161d6f;;
+  }
+  .xc:focus{
+    border-style: none;
+    outline-style: none;
+    background: none;
+  }
+.xc::placeholder{
+    color: #161d6f;
+}
+.xmc i{
+    color: #161d6f !important;
+}
+.xmc{
+    border-bottom: 2px solid #161d6f;
+}
+.socialx i:hover{
+    box-shadow:0px 0px 15px #161d6f;
+    transform: scale(.9);
+    color: grey !important;
+}
+.socialx i{
+    transition: .5;
+}
+</style>
+
+
+
+ <!-- homepage -->
+ <div class="row homepage p-4" style="background-color: #e3f6f5;">
+    <div class="col-12">
+        <h2 class="p-4 text-center">HOW TO GET TO US</h2>
+    </div>
+</div>
+
+<!-- map_start -->
+<div class="row">
+<div class="col-12 Location">
+  {% for office in locationMap %}
+  <iframe src="{{ office.googleurl }}" frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+ 
+  {% endfor %}
+</div>
+</div>
+<!-- map_end -->
+
+<!-- </div> -->
+</div>
+
+<div class="row p-5">
+
+  <div class="col-12">
+    <div class="contactpage mx-auto my-4 p-3 " style="width: 400px;height: fit-content;background-color: white;
+    box-shadow:7px 7px 5px 0px #161d6f;">
+  
+
+      <div class="mb-3 d-flex align-items-center xmc">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input class="form-control form-control-sm xc text-light" type="text" placeholder="Enter your FullName" aria-label="default input example">
+      </div>
+      <div class="mb-3 d-flex align-items-center xmc">
+        <i class="fa fa-envelope-o mx-2" aria-hidden="true"></i>
+        <input type="email" class="form-control form-control-sm xc" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="mb-3 d-flex align-items-center xmc">
+        <i class="fa fa-map-marker mx-2" aria-hidden="true"></i>
+        <input class="form-control form-control-sm xc" type="text" placeholder="Enter your Location" aria-label="default input example">
+      </div>
+      <div class="mb-3 d-flex  xmc">
+        <i class="fa fa-commenting-o pt-2 mx-2" aria-hidden="true"></i>
+        <textarea class="form-control form-control-sm xc" id="exampleFormControlTextarea1" placeholder="Type your message here" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-sm d-block mx-auto btn-primary mb-3">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
